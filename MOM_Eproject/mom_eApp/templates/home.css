@@ -66,3 +66,18 @@ h2 {
     color: black;
     font-family: 'Do Hyeon', sans-serif;
 }
+
+.contents-view {
+    padding: 3rem;
+}
+
+.card-price {
+    color: #446c4f;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.card-date {
+    color: #446c4f;
+    font-family: 'Do Hyeon', sans-serif;
+    text-align: right;
+}
