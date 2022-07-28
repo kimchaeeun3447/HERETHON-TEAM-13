@@ -5,12 +5,11 @@ from django.contrib.postgres.fields import ArrayField
 
 class User(AbstractUser):
     # 기본적으로 제공하는 필드 : username, password
-    name = models.CharField(blank = False)
-    id_front = models.IntegerField()
-    id_back = models.IntegerField()
-    birth_date = models.DateField()
-    level = models.CharField()
-
+    name = models.CharField(blank=False, max_length=50)
+    id_front = models.CharField(null=True)
+    id_back = models.CharField(null=True)
+    birth_date = models.DateField(null=True)
+    level = models.CharField(max_length=10)
 
 class Class(models.Model):
     image = models.ImageField(upload_to=None, blank=False)
