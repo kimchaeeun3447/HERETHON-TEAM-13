@@ -1,3 +1,8 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+from .models import User, Class, Review, Apply
 
-# Register your models here.
+admin.site.register(User, UserAdmin)
+admin.site.register(Class)
+admin.site.register(Review)
+admin.site.register(Apply)
