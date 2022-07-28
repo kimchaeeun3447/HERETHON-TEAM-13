@@ -17,7 +17,7 @@ class Class(models.Model):
     category = models.CharField(max_length=10, default=NULL, null=True)
     start_time = models.DateTimeField()
     place = models.TextField()
-    isFree = models.TextChoices('무료', '유료')
+    isFree = models.CharField(max_length=10, blank=True)
     tuition = models.IntegerField()
     apply_start_time = models.DateTimeField()
     apply_end_time = models.DateTimeField()
