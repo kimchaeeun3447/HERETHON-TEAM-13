@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Rubik:wght@500&display=swap');
 
 body {
     background: #EDEDED;
@@ -21,7 +21,20 @@ header {
 
 .home-banner {
     text-align: center;
-    padding: 10%;
+    padding: 5%;
     display: flex;
     justify-content: center;
+}
+
+h2 {
+    padding-left: 3rem;
+    color: black;
+    font-weight: bold;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+p {
+    font-weight: lighter;
+    text-align: right;
+    padding: 3rem;
 }
