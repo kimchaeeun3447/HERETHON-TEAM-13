@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
+from django.contrib.postgres.fields import ArrayField  
 
 class User(AbstractUser):
     # 기본적으로 제공하는 필드 : username, password
@@ -12,9 +13,9 @@ class User(AbstractUser):
 
 
 class Class(models.Model):
-    image = models.ImageField(upload_to=None, blank=True)
+    image = models.ImageField(upload_to=None, blank=False)
     title = models.CharField()
-    category = models.TextField()
+    category = ArrayField(models.CharField())
     start_time = models.DateTimeField()
     place = models.TextField()
     isFree = models.TextChoices('무료', '유료')
