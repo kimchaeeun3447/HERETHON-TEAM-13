@@ -1,20 +1,20 @@
+from asyncio.windows_events import NULL
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
-from django.contrib.postgres.fields import ArrayField  
 
 class User(AbstractUser):
     # 기본적으로 제공하는 필드 : username, password
     name = models.CharField(blank=False, max_length=50)
-    id_front = models.CharField(null=True)
-    id_back = models.CharField(null=True)
+    id_front = models.CharField(null=True, max_length=10)
+    id_back = models.CharField(null=True, max_length=10)
     birth_date = models.DateField(null=True)
     level = models.CharField(max_length=10)
 
 class Class(models.Model):
     image = models.ImageField(upload_to=None, blank=False)
-    title = models.CharField()
-    category = ArrayField(models.CharField())
+    title = models.CharField(max_length=50)
+    category = models.CharField(max_length=10, default=NULL, null=True)
     start_time = models.DateTimeField()
     place = models.TextField()
     isFree = models.TextChoices('무료', '유료')
