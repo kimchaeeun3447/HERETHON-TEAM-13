@@ -1,21 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 
 body {
-    background: #D9D9D9;
+    background: #EDEDED;
 }
+
 header {
     height: 40px;
     padding: 3rem;
     color: black;
-    font-weight: bolder;
-    display: flex;
+    font-weight: bold;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Rubik', sans-serif    
+    font-family: 'Rubik', sans-serif;
 }
 
 .login-buttons {
     text-align: right;
-    padding-right: 10%;
-    font-size: 25px;
+    font-size: 20px;
+}
+
+.home-banner {
+    text-align: center;
+    padding: 10%;
+    display: flex;
+    justify-content: center;
 }
