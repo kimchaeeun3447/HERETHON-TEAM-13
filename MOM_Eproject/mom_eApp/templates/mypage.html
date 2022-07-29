@@ -63,7 +63,7 @@
                     <div class="scheduled-class-text">
                     <br/>
                     {% for list in lesson_list1%}
-                    <p><strong>ㅤ{{list.title}} </strong>ㅤㅤㅤㅤ{{list.class_start_time|date:'m월 d일'}}</p>
+                    <p><strong>ㅤ{{list.title}} </strong>{{list.class_start_time|date:'m/d'}}</p>
                     {% endfor%}
                     <p style="color:#a8a8a8"><strong>ㅤ더 많은 클래스에 참여해보세요!</strong></p>
                     <br/>
@@ -109,7 +109,7 @@
                     <div class="scheduled-class-text">
                     <br/>
                     {% for list in lesson_list2%}
-                    <p><strong>ㅤ{{list.title}}ㅤㅤㅤ{{list.class_start_time|date:'m월 d일'}}<img src="{% static 'img/writing-review.png' %}" alt="리뷰작성"></p>
+                    <p><strong>ㅤ{{list.title}} {{list.class_start_time|date:'m/d'}} <img src="{% static 'img/writing-review.png' %}" alt="리뷰작성"></p>
                     {% endfor %}
                     
                     <!-- <p><strong>ㅤ텍스트 코딩 이해하기 </strong>ㅤㅤㅤㅤㅤㅤ14일 전ㅤ<img src="img/watching-review.png" alt="리뷰조회"></p> -->
