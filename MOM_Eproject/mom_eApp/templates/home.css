@@ -48,15 +48,13 @@ h2 {
 
 .contents-1 {
     float: left;
-    width:50%;
+    width: 50%;
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
 }
 
 .contents-2 {
     float: right;
-    width:50%;
+    width: 50%;
     box-sizing: border-box;
     display: flex;
     justify-content: center;

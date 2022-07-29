@@ -19,12 +19,25 @@ header {
     font-size: 20px;
 }
 
-.mypage-banner {
-    text-align: center;
-    padding: 3%;
+.banner {
+    text-align: left;
     display: flex;
     justify-content: center;
+    height: 10rem;
+    width: 100%;
+    font-family: 'Do Hyeon', sans-serif;
 }
+
+.banner-card {
+    text-align: left;
+    padding: 3rem;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    font-family: 'Do Hyeon', sans-serif;
+    border-radius: 30px 30px 30px 30px;
+}
+
 
 h3 {
     padding-left: 3rem;
@@ -78,9 +91,9 @@ h3 {
 
 .finished-class {
     float: right;
-    width: 50%;
+    width: 80%;
     box-sizing: border-box;
-    padding-left: 7%;
+    padding-left: 6rem;
 }
 
 .profile-picture {
