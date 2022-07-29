@@ -26,7 +26,7 @@ header {
     justify-content: center;
 }
 
-h2 {
+h3 {
     padding-left: 3rem;
     color: black;
     font-weight: bold;
@@ -35,6 +35,7 @@ h2 {
 
 .mypage-contents{
     padding-left: 5rem;
+    position:relative;
 }
 
 .mypage-content-1 {
@@ -42,19 +43,20 @@ h2 {
     margin: 10px auto;
     display: flex;
     justify-content: center;
-    padding: 3rem;
+    padding-left: 3rem;
 }
 
 .profile {
     float: left;
-    width:50%;
+    width: 50%;
     box-sizing: border-box;
     padding-left: 7%;
+    justify-content: center;
 }
 
 .scheduled-class {
     float: right;
-    width:50%;
+    width: 50%;
     box-sizing: border-box;
 }
 
@@ -68,14 +70,40 @@ h2 {
 
 .my-point {
     float: left;
-    width:50%;
+    width: 50%;
     box-sizing: border-box;
     padding-left: 7%;
+    justify-content: center;
 }
 
 .finished-class {
     float: right;
-    width:50%;
+    width: 50%;
     box-sizing: border-box;
 }
 
+.profile-picture {
+    width: 100%;
+    margin: 10px auto;
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.profile-info {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 23px;
+    float: right;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.profile-notice {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 18px;
+}
+
+.fix-button {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 15px;
+}
