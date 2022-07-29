@@ -1,7 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from time import timezone
+from django.shortcuts import render, redirect, get_object_or_404
 from datetime import date, timedelta
 from .models import Class, User, Apply
 from unicodedata import category
+from django.utils import timezone
 
 # 메인 화면 : 채은
 def home(request):
@@ -58,9 +60,20 @@ def detail(request, lesson_id):
     #print("결과", checked)
     return render(request, 'detail.html', {'lesson':lesson, 'apply':apply, 'checked':checked})
 
-
-# 클래스 등록 화면 : 태영
 def apply(request, lesson_id):
     lesson = get_object_or_404(Class, pk=lesson_id)
-
     return render(request, 'class-register.html', {'lesson':lesson})
+
+# 클래스 등록 화면 : 태영
+# def create(request, lesson_id):
+#     lesson = get_object_or_404(Class, pk=lesson_id)
+#     new_apply = Apply()
+#     new_apply.user = request.POST['username']
+#     new_apply.applyClass = request.POST['applyClass']
+#     new_apply.time = timezone.now()
+#     new_apply.save()
+#     return render(request, 'register-completed.html', {'lesson':lesson})
+
+def create(request, lesson_id):
+    lesson = get_object_or_404(Class, pk=lesson_id)
+    return render(request, 'register-completed.html', {'lesson':lesson})
