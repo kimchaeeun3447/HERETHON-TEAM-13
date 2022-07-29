@@ -59,9 +59,9 @@
                 <div class="card" style="width: 30rem;">
                     <div class="scheduled-class-text">
                     <br/>
-                    <p><strong>ㅤ웹 퍼블리싱 - HTML & CSS 기초부터 응용까지 </strong>ㅤㅤㅤㅤ오늘</p>
-                    <p><strong>ㅤ웹 퍼블리싱 - 반응형 웹 구현하기 </strong>ㅤㅤㅤㅤㅤㅤㅤㅤㅤ 7일 후</p>
-                    <p><strong>ㅤ웹 퍼블리싱 - 클론코딩을 통한 실전 접근 (1)</strong>ㅤㅤㅤㅤ 14일 후</p>
+                    {% for list in lesson_list1%}
+                    <p><strong>ㅤ{{list.title}} </strong>ㅤㅤㅤㅤ{{list.class_start_time|date:'m월 d일'}}</p>
+                    {% endfor%}
                     <p style="color:#a8a8a8"><strong>ㅤ더 많은 클래스에 참여해보세요!</strong></p>
                     <br/>
                     </div>
@@ -105,9 +105,12 @@
                 <div class="card" style="width: 30rem;">
                     <div class="scheduled-class-text">
                     <br/>
-                    <p><strong>ㅤIT 업계 직무 탐색과 포지셔닝 </strong>ㅤㅤㅤ7일 전ㅤ<img src="img/writing-review.png" alt="리뷰작성"></p>
-                    <p><strong>ㅤ텍스트 코딩 이해하기 </strong>ㅤㅤㅤㅤㅤㅤ14일 전ㅤ<img src="img/watching-review.png" alt="리뷰조회"></p>
-                    <p><strong>ㅤ컴퓨팅 블록코딩 실습</strong>ㅤㅤㅤㅤㅤㅤ 21일 전ㅤ<img src="img/watching-review.png" alt="리뷰조회"></p>
+                    {% for list in lesson_list2%}
+                    <p><strong>ㅤ{{list.title}}ㅤㅤㅤ{{list.class_start_time|date:'m월 d일'}}<img src="img/writing-review.png" alt="리뷰작성"></p>
+                    {% endfor %}
+                    
+                    <!-- <p><strong>ㅤ텍스트 코딩 이해하기 </strong>ㅤㅤㅤㅤㅤㅤ14일 전ㅤ<img src="img/watching-review.png" alt="리뷰조회"></p> -->
+                    <!-- <p><strong>ㅤ컴퓨팅 블록코딩 실습</strong>ㅤㅤㅤㅤㅤㅤ 21일 전ㅤ<img src="img/watching-review.png" alt="리뷰조회"></p> -->
                     <p style="color:#a8a8a8"><strong>ㅤ더 많은 클래스에 참여해보세요!</strong></p>
                     <br/>
                     </div>
