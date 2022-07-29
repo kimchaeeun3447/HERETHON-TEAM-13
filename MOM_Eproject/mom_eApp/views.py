@@ -48,10 +48,19 @@ def mypage(request, user_id):
 def detail(request, lesson_id):
     lesson = get_object_or_404(Class, pk=lesson_id)
     apply = get_object_or_404(Apply)
-    return render(request, 'detail.html', {'lesson':lesson, 'apply':apply})
+    checked = True
+    if request.user.is_authenticated:
+        #print("확인",request.user.username, apply.user)
+        if(str(request.user.username) == str(apply.user)):
+            checked = True
+        else:
+            checked = False
+    #print("결과", checked)
+    return render(request, 'detail.html', {'lesson':lesson, 'apply':apply, 'checked':checked})
 
 
 # 클래스 등록 화면 : 태영
 def apply(request, lesson_id):
     lesson = get_object_or_404(Class, pk=lesson_id)
-    return render(request, 'apply.html', {'lesson':lesson})
+
+    return render(request, 'class-register.html', {'lesson':lesson})
