@@ -2,11 +2,6 @@ from unicodedata import category
 from django.shortcuts import get_object_or_404, render
 from .models import Class, Apply
 
-#모델 호출 : 태영
-from .models import Class
-from .models import User
-from .models import Apply
-
 # 메인 화면
 # 메인 화면 : 채은
 def home(request):
