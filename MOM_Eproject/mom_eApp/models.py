@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
@@ -14,20 +13,43 @@ class User(AbstractUser):
 class Class(models.Model):
     image = models.ImageField(upload_to='classImages', blank=False)
     title = models.CharField(max_length=50)
-    category = models.CharField(max_length=10, default=NULL, null=True)
-    start_time = models.DateTimeField()
+    category = models.CharField(max_length=10, null=True)
     place = models.TextField()
-    isFree = models.CharField(max_length=10, blank=True)
-    tuition = models.IntegerField()
-    apply_start_time = models.DateTimeField()
-    apply_end_time = models.DateTimeField()
+    isFree = models.CharField(max_length=10, blank=True) #'유료'/'무료'
+    class_start_time = models.DateTimeField()
+    class_end_time = models.DateTimeField()
     content = models.TextField() 
 
     class Meta:
-        ordering = ['apply_end_time'] #신청 마감일이 촉박한 순 정렬
+        ordering = ['class_start_time'] #클래스 시작일이 촉박한 순으로 정렬
     
     def __str__(self):
         return self.title
+
+
+class Apply(models.Model):
+    user = models.ForeignKey(User,on_delete = models.CASCADE, blank=True)
+    applyClass = models.ForeignKey(Class, on_delete = models.CASCADE, blank=True)  
+    time = models.DateTimeField(default=timezone.now)
+    
+    class Meta:
+        ordering = ['-time'] #최신순 정렬
+
+    def __str__(self):
+        return f"지원자:{self.user} - 클래스:{self.applyClass}"
+
+
+class Qna(models.Model):
+    user = models.ForeignKey(User,on_delete = models.CASCADE, blank=True)
+    qnaClass = models.ForeignKey(Class, on_delete = models.CASCADE, blank=True)  
+    content = models.TextField()
+    time = models.DateTimeField(default=timezone.now)
+    
+    class Meta:
+        ordering = ['-time'] #최신순 정렬
+
+    def __str__(self):
+        return f"질문자:{self.user} - 클래스:{self.qnaClass}"
 
 
 class Review(models.Model):
@@ -42,15 +64,3 @@ class Review(models.Model):
 
     def __str__(self):
         return f"작성자:{self.user} - 클래스:{self.applyClass}"
-
-
-class Apply(models.Model):
-    user = models.ForeignKey(User,on_delete = models.CASCADE, blank=True)
-    applyClass = models.ForeignKey(Class, on_delete = models.CASCADE, blank=True)  
-    time = models.DateTimeField(default=timezone.now)
-    
-    class Meta:
-        ordering = ['-time'] #최신순 정렬
-
-    def __str__(self):
-        return f"지원자:{self.user} - 클래스:{self.applyClass}"
