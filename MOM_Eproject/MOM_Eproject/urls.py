@@ -22,7 +22,8 @@ from mom_eApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('detail/<str:lesson_id>', views.detail, name="detail") #상세페이지[GET] : 태영
+    path('detail/<str:lesson_id>', views.detail, name="detail"), #상세페이지[GET] : 태영
+    path('mypage/<str:user_id>', views.mypage, name="mypage"), #하린
 ]
 
 if settings.DEBUG:
