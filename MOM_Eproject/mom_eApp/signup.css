@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Rubik:wght@500&display=swap");
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+  background: #ededed;
+}
+
+img {
+  padding-left: 37rem;
+}
+
+.id-input {
+  padding-left: 35rem;
+  padding-right: 35rem;
+}
+
+.id {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 35px;
+  padding-top: 2%;
+  padding-left: 35rem;
+  margin-bottom: 6px;
+  letter-spacing: -0.05em;
+
+  color: #000000;
+}
+
+.num-input {
+  padding-left: 35rem;
+  padding-right: 35rem;
+  display: flex;
+}
+
+.birth-input {
+  padding-left: 35rem;
+  padding-right: 35rem;
+  display: flex;
+}
