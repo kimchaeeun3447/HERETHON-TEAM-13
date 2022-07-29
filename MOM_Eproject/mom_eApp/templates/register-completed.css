@@ -14,23 +14,14 @@ header {
     font-family: 'Rubik', sans-serif;
 }
 
-.banner {
-    text-align: left;
-    display: flex;
-    justify-content: center;
-    height: 10rem;
-    width: 100%;
+.completed-notice {
+    text-align: center;
     font-family: 'Do Hyeon', sans-serif;
 }
 
-.banner-card {
-    text-align: left;
-    padding: 3rem;
-    font-weight: bold;
-    color: white;
-    background-color: black;
+h1 {
     font-family: 'Do Hyeon', sans-serif;
-    border-radius: 30px 30px 30px 30px;
+    text-align: center;
 }
 
 .greetings {
@@ -40,20 +31,13 @@ header {
 
 h2 {
     font-family: 'Do Hyeon', sans-serif;
-    padding-left: 6rem;
 }
 
-.info-content {
-    font-family: 'Do Hyeon', sans-serif;
-    padding-left: 6rem;
+.class-info {
+    padding-top: 10rem;
+    padding-left: 3rem;
 }
 
-.person-info {
-    font-family: 'Do Hyeon', sans-serif;
-    padding-left : 6rem;
-    width: 95%;    
-}
-
-.button {
+.buttons {
     text-align: center;
 }
