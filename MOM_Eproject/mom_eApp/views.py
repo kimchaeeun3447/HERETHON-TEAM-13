@@ -5,7 +5,6 @@ from .models import Class, User, Apply
 
 # 메인 화면
 from unicodedata import category
-from .models import Class, 
 # 메인 화면 : 채은
 def home(request):
     # /?category=마케팅
@@ -44,7 +43,6 @@ def mypage(request, user_id):
 
     #참여 예정 클래스
     lesson_list1 = Class.objects.filter(class_start_time__range=[date.today(), date.today() + timedelta(days=30)]).all()
-
     #참여한 클래스
     lesson_list2 = Class.objects.filter(class_start_time__range=[date.today() - timedelta(days=30), date.today()]).all()[:3][::-1]
     
