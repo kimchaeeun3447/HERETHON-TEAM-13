@@ -26,9 +26,9 @@
     {{lesson.category}}
     <br/>
     일시 :
-    {{lesson.class_start_time}}
+    {{lesson.class_start_time|date:'Y.m.d (l) H:s'}}
     ~
-    {{lesson.class_end_time}}
+    {{lesson.class_end_time|date:'H:s'}}
     <br/>
     장소 :
     {{lesson.place}}
@@ -42,7 +42,13 @@
     <!-- 강사 정보, 클래스 관련 직무, 커리큘럼, 질의 응답 : html 하드코딩 하기로 논의됨.-->
 
     <!-- 사이드 신청 여부 -->
-    {% if %}
-    </body>
+    <h1>사이드</h1>
+    {% if user.username == apply.user %}
+      이미 신청한 클래스입니다.
+    {% else %}
+      수강신청하기
+    {% endif %}
 
-  </html>
+  </body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>apply 예시</title>
+  </head>
+
+  <body>
+    {% if user.is_authenticated %}
+      {{user.username}}님, 오늘도 즐겁게 학습하세요!
+    {% else %}
+      로그인해주세요.
+    {% endif %}
+    <h1>클래스 신청하기</h1>
+    <h1>클래스 정보</h1>
+
+  </body>
+
+</html>
