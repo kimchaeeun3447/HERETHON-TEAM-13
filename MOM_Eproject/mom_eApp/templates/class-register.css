@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Rubik:wght@500&display=swap');
+
+body {
+    background: #EDEDED;
+}
+
+header {
+    height: 150px;
+    padding: 3rem;
+    color: black;
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+.banner {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    height: 10rem;
+    width: 100%;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.banner-card {
+    text-align: left;
+    padding: 3rem;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    font-family: 'Do Hyeon', sans-serif;
+    border-radius: 30px 30px 30px 30px;
+}
+
+.greetings {
+    text-align: right;
+    font-size: 20px;
+}
