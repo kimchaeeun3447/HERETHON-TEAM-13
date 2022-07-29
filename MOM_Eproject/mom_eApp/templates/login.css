@@ -1,0 +1,30 @@
+body {
+    background: #ededed;
+}
+
+.logo {
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.input-content {
+    padding-left: 35rem;
+    padding-right: 35rem;
+    text-align: center;
+}
+
+.notice {
+    text-align: center;
+}
+
+.button {
+    text-align: center;
+}
+
+strong {
+    text-decoration: underline;
+}
+
+.sns-login {
+    text-align: center;
+}
