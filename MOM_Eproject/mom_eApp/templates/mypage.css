@@ -21,7 +21,7 @@ header {
 
 .mypage-banner {
     text-align: center;
-    padding: 5%;
+    padding: 3%;
     display: flex;
     justify-content: center;
 }
@@ -33,8 +33,49 @@ h2 {
     font-family: 'Do Hyeon', sans-serif;
 }
 
-.mypage-contents {
-    /* display: flex;
-    justify-content: center;
-    padding : 3rem; */
+.mypage-contents{
+    padding-left: 5rem;
 }
+
+.mypage-content-1 {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.profile {
+    float: left;
+    width:50%;
+    box-sizing: border-box;
+    padding-left: 10%;
+}
+
+.scheduled-class {
+    float: right;
+    width:50%;
+    box-sizing: border-box;
+}
+
+.mypage-content-2 {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.my-point {
+    float: left;
+    width:50%;
+    box-sizing: border-box;
+    padding-left: 10%;
+}
+
+.finished-class {
+    float: right;
+    width:50%;
+    box-sizing: border-box;
+}
+
