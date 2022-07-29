@@ -1,8 +1,8 @@
 from unicodedata import category
 from django.shortcuts import get_object_or_404, render
-from .models import Class, Apply, User
+from .models import Class, Apply
 
-# 메인 화면
+# 메인 화면 : 채은
 def home(request):
     # /?category=마케팅
     category = request.GET.get('category', None) #쿼리스트링 없어도 됨
@@ -27,3 +27,8 @@ def home(request):
         home_class_list = Class.objects.filter(category=category)
     
     return render(request, 'home.html', {'user_class_list': user_class_list, 'home_class_list': home_class_list})
+
+# 클래스 디테일 화면 : 태영
+def detail(request, lesson_id):
+    lesson = get_object_or_404(Class, pk=lesson_id)
+    return render(request, 'detail.html', {'lesson':lesson})
