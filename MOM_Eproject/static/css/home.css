@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Rubik:wght@500&display=swap');
+
+body {
+    background: #EDEDED;
+}
+
+header {
+    height: 150px;
+    padding: 3rem;
+    color: black;
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+.login-buttons {
+    text-align: right;
+    font-size: 20px;
+}
+
+.home-banner {
+    text-align: center;
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    padding-left: 3rem;
+    color: black;
+    font-weight: bold;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.for_more {
+    font-weight: lighter;
+    text-align: right;
+    padding-right: 3rem;
+}
+
+.recommendation-contents {
+    width: 80%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.contents-1 {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.contents-2 {
+    float: right;
+    width: 50%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.card-title {
+    color: black;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.contents-view {
+    padding: 3rem;
+}
+
+.card-price {
+    color: #446c4f;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.card-date {
+    color: #446c4f;
+    font-family: 'Do Hyeon', sans-serif;
+    text-align: right;
+}
+
+nav {
+    padding-left: 3rem;
+    padding-top: 5%;
+    display: flex;
+  }
+  
+  .select {
+    -o-appearance: none;
+    -moz-appearance: none;
+    height: 50px;
+    border: none;
+    text-align: center;
+    font-family: "Noto Sans KR";
+    font-style: normal;
+    font-weight: 400;
+  
+    padding-inline: 1.3rem;
+    letter-spacing: -0.05em;
+    background: #ffffff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+    border-radius: 24px;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .nav-name {
+    cursor: pointer;
+    float: left;
+    width: 200px;
+  }
+  
+  .nav-name a {
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
+    font-family: "Noto Sans KR";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    text-decoration: none;
+    letter-spacing: -0.05em;
+    color: black;
+  }
+  
+  .nav-name :hover {
+    background-color: black;
+    border-radius: 24px;
+    color: white;
+    padding: 0.5rem;
+  }

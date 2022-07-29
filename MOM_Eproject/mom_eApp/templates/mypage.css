@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Rubik:wght@500&display=swap');
+
+body {
+    background: #EDEDED;
+}
+
+header {
+    height: 150px;
+    padding: 3rem;
+    color: black;
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+.greetings {
+    text-align: right;
+    font-size: 20px;
+}
+
+.banner {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    height: 10rem;
+    width: 100%;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.banner-card {
+    text-align: left;
+    padding: 3rem;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    font-family: 'Do Hyeon', sans-serif;
+    border-radius: 30px 30px 30px 30px;
+}
+
+
+h3 {
+    padding-left: 3rem;
+    color: black;
+    font-weight: bold;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.mypage-contents{
+    padding-left: 5rem;
+    position:relative;
+}
+
+.mypage-content-1 {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    padding-left: 3rem;
+}
+
+.profile {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 7%;
+    justify-content: center;
+}
+
+.scheduled-class {
+    float: right;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.mypage-content-2 {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    padding: 9rem;
+}
+
+.my-point {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 7%;
+    justify-content: center;
+}
+
+.finished-class {
+    float: right;
+    width: 80%;
+    box-sizing: border-box;
+    padding-left: 6rem;
+}
+
+.profile-picture {
+    width: 100%;
+    margin: 10px auto;
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.profile-info {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 23px;
+    float: right;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.profile-notice {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 18px;
+}
+
+.fix-button {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 15px;
+}
+

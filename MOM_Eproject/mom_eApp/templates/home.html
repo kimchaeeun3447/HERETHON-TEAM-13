@@ -1,0 +1,408 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOM-E</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <header>
+        <a href="{% url 'home' %}">
+            <img src="{% static 'img/mome-logo.png' %}" alt="logo">
+        </a>
+        <div class="login-buttons">
+            {% if request.user.is_authenticated %}<b>{{request.user.name}}</b>님, 오늘도 즐겁게 학습하세요! {% else %}
+            <span class="badge rounded-pill text-bg-light">로그인</span>
+            <span class="badge rounded-pill text-bg-dark">회원가입</span> {% endif %}
+        </div>
+
+    </header>
+    <div class="home-banner">
+        <a href="https://www.moel.go.kr/policy/policyinfo/woman/list9.do">
+            <img src="{% static 'img/home-banner.png' %}" alt="home-banner">
+        </a>
+    </div>
+    <div class="recommendation-header">
+        {% if request.user.is_authenticated %}
+        <h2>참여 예정 클래스</h2>
+        {% else %}
+        <h2>추천 클래스</h2>
+        {% endif %}
+        <div class="for_more">
+            <a href="{% url 'home' %}" style="text-decoration: none;">
+                <p>더보기 ></p>
+            </a>
+
+        </div>
+    </div>
+
+    <div class="recommendation">
+        <div class="recommendation-contents">
+            {% for user_class in user_class_list %}
+            <div class="contents-2">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{% static 'img/programming.jpg' %}" class="img-fluid rounded-start" alt="contents-1">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{user_class.title}}</h5>
+
+                                <img src="{% static 'img/programming-pill.png'%}" class="img-fluid rounded-start" alt="contents-1">
+                                <p>2022.07.29 ~ 2022.07.31</p>
+                                <a href="{% url 'detail' user_class.id %}">
+                                    <img src="{% static 'img/detail-pill.png' %}" class="img-fluid rounded-start" alt="contents-1">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <nav>
+        <select name="rank" class="select">
+        <option value="popular">인기순</option>
+        <option value="latest">최신순</option>
+      </select>
+        <ul class="nav-container">
+            <li class="nav-name"><a href="{% url 'home' %}">전체</a></li>
+            <li class="nav-name"><a href="?category=마케팅">마케팅</a></li>
+            <li class="nav-name"><a href="?category=프로그래밍">프로그래밍</a></li>
+            <li class="nav-name"><a href="?category=크리에이티브">크리에이티브</a></li>
+            <li class="nav-name"><a href="?category=비즈니스">비즈니스</a></li>
+            <li class="nav-name"><a href="?category=헤어/뷰티">헤어/뷰티</a></li>
+        </ul>
+    </nav>
+
+
+    {% if category is None%}
+    <!--전체의 경우-->
+    <div class="contents-view">
+        <div class="contents-row1">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="{% url 'detail' 1 %}">
+                            <img src="{% static 'img/coding.jpg' %}" class="card-img-top" alt="content1">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">웹 퍼블리싱 - HTML & CSS 기초부터 응용까지</h5>
+                            <img src="{% static 'img/programming-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                            <p class="card-price">무료</p>
+                            <p class="card-date">2022.07.29 ~ 2022.07.31</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="{% url 'detail' 1 %}">
+                            <img src="{% static 'img/programming.jpg' %}" class="card-img-top" alt="content1">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">웹 퍼블리싱 - 반응형 웹 구현하기</h5>
+                            <img src="{% static 'img/programming-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                            <p class="card-price">무료</p>
+                            <p class="card-date">2022.08.05 ~ 2022.08.07</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="{% url 'detail' 1 %}">
+                            <img src="{% static 'img/programmer.jpg' %}" class="card-img-top" alt="content1">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">웹 퍼블리싱 - 클론코딩을 통한 실전 접근 (1)</h5>
+                            <img src="{% static 'img/programming-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                            <p class="card-price" style="color:red">유료</p>
+                            <p class="card-date">2022.08.19 ~ 2022.08.21</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/><br/><br/>
+            <div class="contents row-2">
+                <div class="contents-row1">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card h-100">
+                                <a href="{% url 'detail' 1 %}">
+                                    <img src="{% static 'img/social.jpg' %}" class="card-img-top" alt="content1">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title">디지털 콘텐츠 마케팅 (1) - SNS 분석</h5>
+                                    <img src="{% static 'img/marketing-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                                    <p class="card-price">무료</p>
+                                    <p class="card-date">2022.07.29 ~ 2022.07.31</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <a href="{% url 'detail' 1 %}">
+                                    <img src="{% static 'img/branding.jpg' %}" class="card-img-top" alt="content1">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title">디지털 콘텐츠 마케팅 (2) - 브랜딩 기초 및 사례 분석</h5>
+                                    <img src="{% static 'img/marketing-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                                    <p class="card-price">무료</p>
+                                    <p class="card-date">2022.08.05 ~ 2022.08.07</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <a href="{% url 'detail' 1 %}">
+                                    <img src="{% static 'img/marketing.jpg' %}" class="card-img-top" alt="content1">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title">디지털 콘텐츠 마케팅 (2) - 브랜딩 기초 및 사례 분석</h5>
+                                    <img src="{% static 'img/marketing-pill.png' %}" class="img-fluid rounded-start" alt="contents-1">
+                                    <img src="{% static 'img/creative-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                                    <p class="card-price">무료</p>
+                                    <p class="card-date">2022.08.12 ~ 2022.08.17</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br/><br/><br/>
+        <div class="contents row-3">
+            <div class="contents-row1">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <a href="{% url 'detail' 1 %}">
+                                <img src="{% static 'img/woman.jpg' %}" class="card-img-top" alt="content1">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">여성의 자기탐색과 워크 트렌드 이해</h5>
+                                <img src="{% static 'img/business-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                                <p class="card-price">무료</p>
+                                <p class="card-date">2022.07.29 ~ 2022.07.31</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <a href="{% url 'detail' 1 %}">
+                                <img src="{% static 'img/interview.jpg' %}" class="card-img-top" alt="content1">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">면접 스타일링 컨설팅과 스피치 연습</h5>
+                                <img src="{% static 'img/business-pill.png'%}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                                <p class="card-price" style="color:red">유료</p>
+                                <p class="card-date">2022.09.02 ~ 2022.09.04</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <a href="{% url 'detail' 1 %}">
+                                <img src="{% static 'img/job.jpg' %}" class="card-img-top" alt="content1">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">적중률 높은 면접질문 도출방법</h5>
+                                <img src="{% static 'img/business-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                                <p class="card-price">무료</p>
+                                <p class="card-date">2022.09.09 ~ 2022.09.11</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% elif category == "프로그래밍" %}
+    <div class="contents-view">
+        <div class="contents-row1">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="{% url 'detail' 1 %}">
+                            <img src="{% static 'img/coding.jpg' %}" class="card-img-top" alt="content1">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">웹 퍼블리싱 - HTML & CSS 기초부터 응용까지</h5>
+                            <img src="{% static 'img/programming-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                            <p class="card-price">무료</p>
+                            <p class="card-date">2022.07.29 ~ 2022.07.31</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="{% url 'detail' 1 %}">
+                            <img src="{% static 'img/programming.jpg' %}" class="card-img-top" alt="content1">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">웹 퍼블리싱 - 반응형 웹 구현하기</h5>
+                            <img src="{% static 'img/programming-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                            <p class="card-price">무료</p>
+                            <p class="card-date">2022.08.05 ~ 2022.08.07</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="{% url 'detail' 1 %}">
+                            <img src="{% static 'img/programmer.jpg' %}" class="card-img-top" alt="content1">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">웹 퍼블리싱 - 클론코딩을 통한 실전 접근 (1)</h5>
+                            <img src="{% static 'img/programming-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                            <p class="card-price" style="color:red">유료</p>
+                            <p class="card-date">2022.08.19 ~ 2022.08.21</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/><br/><br/>
+        </div>
+    </div>
+
+    {% elif category == "마케팅" %}
+    <div class="contents-view">
+        <div class="contents row-2">
+            <div class="contents-row1">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <a href="{% url 'detail' 1 %}">
+                                <img src="{% static 'img/social.jpg' %}" class="card-img-top" alt="content1">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">디지털 콘텐츠 마케팅 (1) - SNS 분석</h5>
+                                <img src="{% static 'img/marketing-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                                <p class="card-price">무료</p>
+                                <p class="card-date">2022.07.29 ~ 2022.07.31</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <a href="{% url 'detail' 1 %}">
+                                <img src="{% static 'img/branding.jpg' %}" class="card-img-top" alt="content1">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">디지털 콘텐츠 마케팅 (2) - 브랜딩 기초 및 사례 분석</h5>
+                                <img src="{% static 'img/marketing-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                                <p class="card-price">무료</p>
+                                <p class="card-date">2022.08.05 ~ 2022.08.07</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <a href="{% url 'detail' 1 %}">
+                                <img src="{% static 'img/marketing.jpg' %}" class="card-img-top" alt="content1">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">디지털 콘텐츠 마케팅 (2) - 브랜딩 기초 및 사례 분석</h5>
+                                <img src="{% static 'img/marketing-pill.png' %}" class="img-fluid rounded-start" alt="contents-1">
+                                <img src="{% static 'img/creative-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                                <p class="card-price">무료</p>
+                                <p class="card-date">2022.08.12 ~ 2022.08.17</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br/><br/><br/>
+    </div>
+
+    {% elif category == "비즈니스" %}
+    <div class="contents-view">
+        <div class="contents row-3">
+            <div class="contents-row1">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <a href="{% url 'detail' 1 %}">
+                                <img src="{% static 'img/woman.jpg' %}" class="card-img-top" alt="content1">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">여성의 자기탐색과 워크 트렌드 이해</h5>
+                                <img src="{% static 'img/business-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                                <p class="card-price">무료</p>
+                                <p class="card-date">2022.07.29 ~ 2022.07.31</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <a href="{% url 'detail' 1 %}">
+                                <img src="{% static 'img/interview.jpg' %}" class="card-img-top" alt="content1">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">면접 스타일링 컨설팅과 스피치 연습</h5>
+                                <img src="{% static 'img/business-pill.png'%}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                                <p class="card-price" style="color:red">유료</p>
+                                <p class="card-date">2022.09.02 ~ 2022.09.04</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <a href="{% url 'detail' 1 %}">
+                                <img src="{% static 'img/job.jpg' %}" class="card-img-top" alt="content1">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">적중률 높은 면접질문 도출방법</h5>
+                                <img src="{% static 'img/business-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                                <p class="card-price">무료</p>
+                                <p class="card-date">2022.09.09 ~ 2022.09.11</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% elif category == "크리에이티브" %}
+    <div class="contents-view">
+        <div class="contents row-2">
+            <div class="contents-row1">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <a href="{% url 'detail' 1 %}">
+                                <img src="{% static 'img/marketing.jpg' %}" class="card-img-top" alt="content1">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">디지털 콘텐츠 마케팅 (2) - 브랜딩 기초 및 사례 분석</h5>
+                                <img src="{% static 'img/marketing-pill.png' %}" class="img-fluid rounded-start" alt="contents-1">
+                                <img src="{% static 'img/creative-pill.png' %}" class="img-fluid rounded-start" alt="contents-1"><br/><br/>
+                                <p class="card-price">무료</p>
+                                <p class="card-date">2022.08.12 ~ 2022.08.17</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br/><br/><br/>
+    </div>
+
+    {% else %} &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;헤어/뷰티 클래스는 아직 준비중입니다!<br><br> {% endif %}
+
+
+    </div>
+</body>
+
+</html>
