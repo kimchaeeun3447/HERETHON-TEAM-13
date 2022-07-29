@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>detail 페이지 테스트 연결 부분 입니다.</title>
+  </head>
+
+  <body>
+    {% if user.is_authenticated %}
+      {{user.username}}님, 오늘도 즐겁게 학습하세요!
+    {% else %}
+      로그인해주세요.
+    {% endif %}
+    <!-- 로고 밑 부분 -->
+    <h1>로고</h1>
+    {{lesson.title}}
+    <!-- 클래스 정보 -->
+    <h1>클래스 정보</h1>
+    클래스명 :
+    {{lesson.title}}
+    <br/>
+    카테고리 :
+    {{lesson.category}}
+    <br/>
+    일시 :
+    {{lesson.class_start_time|date:'Y.m.d (l) H:s'}}
+    ~
+    {{lesson.class_end_time|date:'H:s'}}
+    <br/>
+    장소 :
+    {{lesson.place}}
+    <br/>
+    수강료 :
+    {{lesson.isFree}}
+    <!-- 클래스 소개 -->
+    <h1>클래스 소개</h1>
+    {{lesson.content}}
+
+    <!-- 강사 정보, 클래스 관련 직무, 커리큘럼, 질의 응답 : html 하드코딩 하기로 논의됨.-->
+
+    <!-- 사이드 신청 여부 -->
+    <h1>사이드</h1>
+    {% if checked %}
+      이미 신청한 클래스입니다.
+    {% else %}
+      수강신청하기
+    {% endif %}
+
+  </body>
+
+</html>
