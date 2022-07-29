@@ -9,6 +9,7 @@ class User(AbstractUser):
     id_back = models.CharField(null=True, max_length=10)
     birth_date = models.DateField(null=True)
     level = models.CharField(max_length=10)
+    introduction = models.CharField(max_length=1000)
 
 class Class(models.Model):
     image = models.ImageField(upload_to='classImages', blank=False)
