@@ -13,13 +13,13 @@
     <header>
         <img src="img/mome-logo.png" alt="logo">
         <div class="greetings">
-            <p><strong>김멋사</strong><small>님, 오늘도 즐겁게 학습하세요!</small></p>
+            <p><strong>{{user.name}}</strong><small>님, 오늘도 즐겁게 학습하세요!</small></p>
         </div>
     </header>
     <br/><br/><br/><br/>
     <div class="banner">
         <div class="banner-card" style="width: 80rem;">
-            <h1>김멋사님의 마이페이지</h1>
+            <h1>{{user.name}}님의 마이페이지</h1>
         </div>
     </div>
     <br/><br/><br/><br/>
@@ -39,10 +39,11 @@
                         <div class="profile-text">
                             <br/>
                             <div class="profile-info">
-                            <p>김멋사<small> 2000년 1월 1일</small></p>
+                            <p>{{user.name}}<small>{{user.birth_date|date:'Y년 m월 d일'}}</small></p>
                             </div>
                             <p class="profile-notice" style="color:gray">
-                            자기소개를 입력해주세요.
+                                {{user.introduction}}
+                            <!-- 자기소개를 입력해주세요. -->
                             <img class="fix-button" src="img/fix-button.png" alt="fix-button">
                             </p>
                             <br/>
@@ -84,12 +85,12 @@
                         <div class="profile-text">
                             <br/>
                             <div class="profile-info">
-                            <p><img src="img/lv-1.png" alt="lv-1"> 반가운 새싹</p>
+                            <p><img src="img/lv-1.png" alt="lv-1"> {{user.level}}</p>
                             </div>
                             <p class="profile-notice" style="color:gray">
                             함께 성장할 수 있어 기쁘군요!
                             </p>
-                            <p> <strong>보유 포인트</strong> <strong>3</strong> 포인트 
+                            <p> <strong>보유 포인트</strong> <strong>{{user.point}}</strong> 포인트 
                             <br/> <strong>레벨업 조건</strong> 참여 클래스 <strong>4</strong>개 </p>
                             <br/>
                         </div>
